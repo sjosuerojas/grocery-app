@@ -1,3 +1,6 @@
+import { TextField } from "@radix-ui/themes";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+
 interface SearchBarProps {
   filterText: string;
   inStockOnly: boolean;
@@ -19,12 +22,16 @@ export default function SearchBar({
 
   return (
     <form>
-      <input
-        type="text"
-        placeholder="Search"
-        value={filterText}
-        onChange={handleChangeInput}
-      />
+      <TextField.Root>
+        <TextField.Slot>
+          <MagnifyingGlassIcon height="16" width="16" />
+        </TextField.Slot>
+        <TextField.Input
+          placeholder="Search the products"
+          value={filterText}
+          onChange={handleChangeInput}
+        />
+      </TextField.Root>
       <label>
         <input
           type="checkbox"

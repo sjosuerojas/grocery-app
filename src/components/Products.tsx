@@ -1,7 +1,6 @@
 import type { ProductTableProps, SingleProductProps } from "@/models/Products";
 
 function ProductRow({ product }: SingleProductProps) {
-  console.log("ProductRow");
   const productUnaviable = (
     <span style={{ color: "red" }}> {product.name} </span>
   );
@@ -17,7 +16,6 @@ function ProductRow({ product }: SingleProductProps) {
 }
 
 function ProductCategoryRow({ category }: { category: string }) {
-  console.log("ProductCategoryRow");
   return (
     <tr>
       <th colSpan={2}> {category} </th>
